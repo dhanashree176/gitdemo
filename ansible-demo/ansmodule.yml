@@ -5,4 +5,4 @@
   
   tasks:
     - name: Install Web Server
-      yum: pkg=httpd state=installed
+      yum: pkg=httpd state=absent

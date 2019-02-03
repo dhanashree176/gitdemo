@@ -1,0 +1,14 @@
+---
+- hosts: all
+  user: ec2-user
+  sudo: true
+
+  vars:
+    pck_name: httpd
+    serv_name: httpd
+
+  tasks:
+    - name: install {{ pck_name }}
+      yum: pkg={{ pck_name }} state=installed
+    - name: start {{ serv_name }}
+      service: name={{ serv_name }} state=started
