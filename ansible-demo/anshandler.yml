@@ -1,0 +1,13 @@
+---
+ - hosts: all
+   users: ec2-user
+   sudo : true
+
+vars:
+   pkg_name: httpd
+   serv_name: httpd
+
+ tasks:
+    -name: install {{ pkg_name }}
+     yum: pkg={{ pkg_name }} state=installed
+     notify: restart HTTPD
